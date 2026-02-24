@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Holi 2026</title>
+<link rel="stylesheet" href="style.css">
+
+<link rel="icon" type="image/png" sizes="32x32" href="./image.jpg">
+
+<!-- Confetti CDN -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<audio id="holiMusic" src="music.mp3"></audio>
+
+<div class="color-bg"></div>
+<div class="particles"></div>
+
+<!-- Music Toggle -->
+<div class="music-toggle" onclick="toggleMusic()">🎵</div>
+
+<!-- HOME PAGE -->
+<div class="container" id="homePage">
+    <h1>🌸 Happy Holi 2026 🌸</h1>
+
+    <p class="shayari">
+        रंगों की फुहार, खुशियों की बहार 💖<br>
+        मुबारक हो आपको होली का त्यौहार 🌈
+    </p>
+
+    <input type="text" id="nameInput" placeholder="Apna Naam Likhiye">
+    <button onclick="showWish()">Wish Dekho 🎉</button>
+</div>
+
+<!-- WISH PAGE -->
+<div class="container hidden" id="wishPage">
+    <h2 id="userName"></h2>
+    <img src="holi.jpg" class="holi-img">
+    <button onclick="goHome()">Home</button>
+</div>
+<div class="color-splash splash1"></div>
+<div class="color-splash splash2"></div>
+<div class="color-splash splash3"></div>
+
+<!-- <img src="pichkari.png" class="pichkari"> -->
+<footer class="credit">✨ Code by Jatin ✨</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
