@@ -3,11 +3,13 @@ const wishPage = document.getElementById("wishPage");
 const userName = document.getElementById("userName");
 const nameInput = document.getElementById("nameInput");
 const music = document.getElementById("holiMusic");
+const musicBtn = document.querySelector(".music-toggle");
 
+// Show Wish
 function showWish() {
     const name = nameInput.value.trim();
 
-    if(name === ""){
+    if (name === "") {
         alert("Apna naam likhiye 😊");
         return;
     }
@@ -17,24 +19,35 @@ function showWish() {
     homePage.classList.add("hidden");
     wishPage.classList.remove("hidden");
 
-    // Confetti Blast
+    // 🎵 Music Play (Allowed because button click)
+    music.play().then(() => {
+        musicBtn.innerHTML = "🔊";
+    }).catch(error => {
+        console.log("Autoplay blocked:", error);
+    });
+
+    // 🎉 Confetti Blast
     confetti({
         particleCount: 200,
-        spread: 100,
+        spread: 120,
         origin: { y: 0.6 }
     });
 }
 
-function goHome(){
+// Back Home
+function goHome() {
     wishPage.classList.add("hidden");
     homePage.classList.remove("hidden");
     nameInput.value = "";
 }
 
-function toggleMusic(){
-    if(music.paused){
+// Music Toggle
+function toggleMusic() {
+    if (music.paused) {
         music.play();
+        musicBtn.innerHTML = "🔊";
     } else {
         music.pause();
+        musicBtn.innerHTML = "🎵";
     }
 }
